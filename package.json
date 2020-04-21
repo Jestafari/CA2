@@ -1,0 +1,28 @@
+{
+  "name": "ca2",
+  "version": "1.0.0",
+  "description": "IWA - CA2",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jestafari/CA2.git"
+  },
+  "author": "Jesús Acuña - 2017066",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jestafari/CA2/issues"
+  },
+  "homepage": "https://github.com/Jestafari/CA2#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "data": "^0.6.1",
+    "express": "^4.17.1",
+    "mkdir": "0.0.2",
+    "mongodb": "^3.5.6",
+    "nodemon": "^2.0.3"
+  }
+}
