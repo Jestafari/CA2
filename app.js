@@ -15,8 +15,14 @@ app.get('/bikes', (req, res) => {
 })
 
 app.get('/bikes/:id', (req, res) => {
+    let bikeId = req.params.bikeId
 
+    Bike.findById(bikeId, (err, bike) => {
+        if(err) return res.status(500).send({message: 'Error retrieving data'})
+        if(!bike) return res.status(404).send({message: 'Bike does not exist'})
 
+        res.status(200).send({bike})
+    })
 })
 
 app.post('/bikes', (req, res) => {
