@@ -21,7 +21,7 @@ app.get('/bikes/:id', (req, res) => {
 
 app.post('/bikes', (req, res) => {
     console.log('POST /bike')
-    console/log(req.body)
+    console.log(req.body)
 
     let bike = new Bike()
     bike.brand = req.body.brand
