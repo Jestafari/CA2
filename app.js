@@ -11,10 +11,15 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(bodyParser.json());
 
 app.get('/bikes', (req, res) => {
-    res.send(200, {bikes: []})
+    Bike.find({}, (err, bikes) => {
+        if (err) return res.status(500).send({message: 'Error retrieving data: ${err}'})
+        if (!bikes) return res.status(404).send({message: 'Bike does not exist'})
+
+        res.send(200, {bikes})
+    })   
 })
 
-app.get('/bikes/:id', (req, res) => {
+app.get('/bikes/:bikeId', (req, res) => {
     let bikeId = req.params.bikeId
 
     Bike.findById(bikeId, (err, bike) => {
